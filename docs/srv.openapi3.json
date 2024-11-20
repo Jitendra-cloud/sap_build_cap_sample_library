@@ -1,13 +1,13 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Service for namespace sap _build_cap_sample_library",
-    "description": "This is the service located at [api/v1]",
+    "title": "Use @title: '...' on your CDS service to provide a meaningful title.",
+    "description": "Use @Core.LongDescription: '...' on your CDS service to provide a meaningful description.",
     "version": ""
   },
   "x-sap-api-type": "ODATAV4",
-  "x-odata-version": "4.0",
-  "x-sap-shortText": "Service for namespace sap _build_cap_sample_library",
+  "x-odata-version": "4.01",
+  "x-sap-shortText": "Use @Core.Description: '...' on your CDS service to provide a meaningful short text.",
   "servers": [
     {
       "url": "/api/v1"
@@ -15,7 +15,7 @@
   ],
   "tags": [],
   "paths": {
-    "/addQuotes(value='{value}')": {
+    "/addQuotes": {
       "get": {
         "summary": "addQuotes",
         "tags": [
@@ -24,12 +24,14 @@
         "parameters": [
           {
             "required": true,
-            "in": "path",
+            "in": "query",
             "name": "value",
             "description": "String value needs to be enclosed in single quotes",
             "schema": {
               "type": "string",
-              "default": ""
+              "nullable": true,
+              "pattern": "^(null|'([^']|'')*')$",
+              "default": "null"
             }
           }
         ],
@@ -55,7 +57,7 @@
         }
       }
     },
-    "/getListOfTodos()": {
+    "/getListOfTodos": {
       "get": {
         "summary": "get list of dodos",
         "tags": [
@@ -139,7 +141,7 @@
         }
       }
     },
-    "/toInteger(value='{value}')": {
+    "/toInteger": {
       "get": {
         "summary": "toInteger",
         "tags": [
@@ -148,12 +150,14 @@
         "parameters": [
           {
             "required": true,
-            "in": "path",
+            "in": "query",
             "name": "value",
             "description": "String value needs to be enclosed in single quotes",
             "schema": {
               "type": "string",
-              "default": ""
+              "nullable": true,
+              "pattern": "^(null|'([^']|'')*')$",
+              "default": "null"
             }
           }
         ],
@@ -179,7 +183,7 @@
         }
       }
     },
-    "/toNumber(value='{value}')": {
+    "/toNumber": {
       "get": {
         "summary": "toNumber",
         "tags": [
@@ -188,12 +192,14 @@
         "parameters": [
           {
             "required": true,
-            "in": "path",
+            "in": "query",
             "name": "value",
             "description": "String value needs to be enclosed in single quotes",
             "schema": {
               "type": "string",
-              "default": ""
+              "nullable": true,
+              "pattern": "^(null|'([^']|'')*')$",
+              "default": "null"
             }
           }
         ],
@@ -219,7 +225,7 @@
         }
       }
     },
-    "/toStr(value={value})": {
+    "/toStr": {
       "get": {
         "summary": "toString",
         "tags": [
@@ -228,13 +234,13 @@
         "parameters": [
           {
             "required": true,
-            "in": "path",
+            "in": "query",
             "name": "value",
             "schema": {
               "anyOf": [
                 {
                   "type": "number",
-                  "format": "double,null"
+                  "format": "double"
                 },
                 {
                   "type": "string"
@@ -242,7 +248,7 @@
               ],
               "example": 3.14,
               "nullable": true,
-              "default": ""
+              "default": "null"
             }
           }
         ],
@@ -312,7 +318,6 @@
         "properties": {
           "responseArray": {
             "type": "array",
-            "required": true,
             "items": {
               "allOf": [
                 {
