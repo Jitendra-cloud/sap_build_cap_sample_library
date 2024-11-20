@@ -15,7 +15,7 @@
   ],
   "tags": [],
   "paths": {
-    "/addQuotes": {
+    "/addQuotes(value='{value}')": {
       "get": {
         "summary": "addQuotes",
         "tags": [
@@ -57,7 +57,7 @@
         }
       }
     },
-    "/getListOfTodos": {
+    "/getListOfTodos()": {
       "get": {
         "summary": "get list of dodos",
         "tags": [
@@ -141,7 +141,7 @@
         }
       }
     },
-    "/toInteger": {
+    "/toInteger(value='{value}')": {
       "get": {
         "summary": "toInteger",
         "tags": [
@@ -183,7 +183,7 @@
         }
       }
     },
-    "/toNumber": {
+    "/toNumber(value='{value}')": {
       "get": {
         "summary": "toNumber",
         "tags": [
@@ -225,7 +225,7 @@
         }
       }
     },
-    "/toStr": {
+    "/toStr(value='{value}')": {
       "get": {
         "summary": "toString",
         "tags": [
