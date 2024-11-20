@@ -29,9 +29,7 @@
             "description": "String value needs to be enclosed in single quotes",
             "schema": {
               "type": "string",
-              "nullable": true,
-              "pattern": "^(null|'([^']|'')*')$",
-              "default": "null"
+              "default": ""
             }
           }
         ],
@@ -155,9 +153,7 @@
             "description": "String value needs to be enclosed in single quotes",
             "schema": {
               "type": "string",
-              "nullable": true,
-              "pattern": "^(null|'([^']|'')*')$",
-              "default": "null"
+              "default": ""
             }
           }
         ],
@@ -197,9 +193,7 @@
             "description": "String value needs to be enclosed in single quotes",
             "schema": {
               "type": "string",
-              "nullable": true,
-              "pattern": "^(null|'([^']|'')*')$",
-              "default": "null"
+              "default": ""
             }
           }
         ],
@@ -240,7 +234,7 @@
               "anyOf": [
                 {
                   "type": "number",
-                  "format": "double"
+                  "format": "double,null"
                 },
                 {
                   "type": "string"
@@ -248,7 +242,7 @@
               ],
               "example": 3.14,
               "nullable": true,
-              "default": "null"
+              "default": ""
             }
           }
         ],
